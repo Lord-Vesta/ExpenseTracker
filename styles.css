@@ -1,0 +1,171 @@
+/*   color: #163A5F; ->blue */
+/* #143456 */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: "Roboto Condensed", sans-serif;
+}
+
+.container {
+  width: 76vw;
+  padding: 0 3rem;
+}
+
+body {
+  display: flex;
+}
+
+nav {
+  width: 15vw;
+}
+
+nav h2 {
+  margin-top: 1rem;
+  margin-bottom: 2rem;
+  color: #143456;
+  text-align: center;
+  cursor: pointer;
+}
+
+.navIcons {
+  display: flex;
+  padding: 1rem;
+  margin: 1rem;
+  gap: 1rem;
+  color: #143456;
+  font-weight: bold;
+  border-radius: 0.7rem;
+  cursor: pointer;
+}
+
+.navIcons:hover {
+  background-color: #143456;
+  color: white;
+}
+
+.bottom {
+  margin-top: 12rem;
+}
+
+.settings {
+  display: flex;
+  padding: 0.7rem 1rem;
+  margin: 0.4rem 1rem;
+  gap: 1rem;
+  color: #143456;
+  font-weight: bold;
+  border-radius: 0.7rem;
+  cursor: pointer;
+}
+
+.settings:hover {
+  background-color: #143456;
+  color: white;
+}
+
+.Logout {
+  display: flex;
+  padding: 0.7rem 1rem;
+  margin: 0 1rem;
+  gap: 1rem;
+  color: #143456;
+  font-weight: bold;
+  border-radius: 0.7rem;
+  cursor: pointer;
+}
+
+.Logout:hover {
+  background-color: #143456;
+  color: white;
+}
+
+main {
+  height: 100vh;
+  width: 85vw;
+}
+
+.topNav {
+  display: flex;
+  justify-content: end;
+  align-items: center;
+  gap: 2rem;
+  margin: 1rem 0;
+  margin-right: 4rem;
+}
+
+.fa-bell {
+  color: #143456;
+  cursor: pointer;
+}
+
+.profile {
+  display: flex;
+  gap: 0.4rem;
+  align-items: center;
+  color: #143456;
+  cursor: pointer;
+}
+
+.profile img {
+  width: 2rem;
+  border-radius: 50%;
+}
+
+.mainBody {
+  background-color: #f0f2f554;
+  width: 85vw;
+  height: 89.9vh;
+}
+
+.mainBody h1 {
+  padding-top: 2rem;
+  margin-bottom: 1.5rem;
+}
+
+.ExpenseDashboard {
+  width: 30vw;
+  background-color: #143456;
+  border-radius: 0.7rem;
+  color: white;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem;
+}
+
+.ExpenseDashboard > div {
+  margin-inline: 0.2rem;
+}
+
+.ExpenseDashboard > div > p {
+  margin: 1rem 0;
+}
+
+.ExpenseDashboard > div > div > p {
+  margin: 1rem 0;
+}
+
+.ExpenseDashboard > div:nth-child(2) {
+  display: flex;
+  gap: 0.7rem;
+}
+
+.EditDelete {
+  display: flex;
+}
+
+table {
+  margin-top: 1rem;
+  width: 100%;
+  border-collapse: collapse;
+}
+
+td,
+th {
+  border: 1px solid #dddddd;
+  text-align: left;
+  padding: 1rem;
+  border-left: none;
+  border-right: none;
+}
