@@ -56,73 +56,130 @@
         </div>
       </section>
       <section class="mainBody container">
-        <h1>Expense Tracker</h1>
-        <div class="ExpenseDashboard">
-          <div>
-            <p>Total Expense</p>
-            <p>3000 inr</p>
-          </div>
-          <div>
-            <hr />
-            <div>
-              <p>Maximum Expense</p>
-              <p>3000 inr</p>
+        <div
+          style="
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding-top: 2rem;
+          "
+        >
+          <!-- <h1>Expense Tracker</h1> -->
+          <div class="miniDashboard">
+            <p>Total Expenses</p>
+            <h2>$3000</h2>
+            <div class="ExpenseDashboard">
+              <div>
+                <div>
+                  <p>Total Expense</p>
+                  <h2>$30,000</h2>
+                </div>
+                <hr />
+              </div>
+              <div>
+                <div>
+                  <p>Maximum Expense</p>
+                  <h2>$3000</h2>
+                </div>
+                <hr />
+              </div>
+              <div>
+                <div>
+                  <p>Average Expense</p>
+                  <h2>$3000</h2>
+                </div>
+              </div>
             </div>
-            <hr />
-          </div>
-          <div>
-            <p>Average Expense</p>
-            <p>3000 inr</p>
           </div>
         </div>
-        <div class="EditDelete">
-          <div>
-            <i class="fa-solid fa-pen"></i>
-            <p>Edit</p>
-          </div>
-          <div>
-            <i class="fa-solid fa-trash"></i>
-            <p>Delete</p>
+        <div class="expensess">
+          <button>Add Expense</button>
+          <div class="EditDelete">
+            <div>
+              <i class="fa-solid fa-pen"></i>
+              <p>Edit</p>
+            </div>
+            <div>
+              <i class="fa-solid fa-trash"></i>
+              <p>Delete</p>
+            </div>
           </div>
         </div>
 
-        <table>
-          <tr>
-            <th>Id</th>
-            <th>Description</th>
-            <th>Amount</th>
-            <th>Date</th>
-            <th>Category</th>
-          </tr>
-          <tr>
-            <td>1</td>
-            <td>Food</td>
-            <td>200</td>
-            <td>20/3/23</td>
-            <td>Hotel</td>
-          </tr>
-          <tr>
-            <td>1</td>
-            <td>Food</td>
-            <td>200</td>
-            <td>20/3/23</td>
-            <td>Hotel</td>
-          </tr>
-          <tr>
-            <td>1</td>
-            <td>Food</td>
-            <td>200</td>
-            <td>20/3/23</td>
-            <td>Hotel</td>
-          </tr>
-          <tr>
-            <td>1</td>
-            <td>Food</td>
-            <td>200</td>
-            <td>20/3/23</td>
-            <td>Hotel</td>
-          </tr>
-        </table>
+        <div
+          style="
+            height: 15rem;
+            overflow: auto;
+            margin: 0;
+            padding: 0;
+            margin-top: 1rem;
+          "
+          id="Scroller"
+          class="scrolldown"
+        >
+          <table>
+            <thead>
+              <tr>
+                <th>Id</th>
+                <th>Description</th>
+                <th>Amount</th>
+                <th>Date</th>
+                <th>Category</th>
+              </tr>
+            </thead>
+            <tbody style="height: 16rem">
+              <tr>
+                <td>1</td>
+                <td>Food</td>
+                <td>200</td>
+                <td>20/3/23</td>
+                <td>Hotel</td>
+              </tr>
+              <tr>
+                <td>1</td>
+                <td>Food</td>
+                <td>200</td>
+                <td>20/3/23</td>
+                <td>Hotel</td>
+              </tr>
+              <tr>
+                <td>1</td>
+                <td>Food</td>
+                <td>200</td>
+                <td>20/3/23</td>
+                <td>Hotel</td>
+              </tr>
+              <tr>
+                <td>1</td>
+                <td>Food</td>
+                <td>200</td>
+                <td>20/3/23</td>
+                <td>Hotel</td>
+              </tr>
+              <tr>
+                <td>1</td>
+                <td>Food</td>
+                <td>200</td>
+                <td>20/3/23</td>
+                <td>Hotel</td>
+              </tr>
+              <tr>
+                <td>1</td>
+                <td>Food</td>
+                <td>200</td>
+                <td>20/3/23</td>
+                <td>Hotel</td>
+              </tr>
+              <tr>
+                <td>1</td>
+                <td>Food</td>
+                <td>200</td>
+                <td>20/3/23</td>
+                <td>Hotel</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
       </section>
     </main>
 

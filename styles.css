@@ -1,5 +1,29 @@
 /*   color: #163A5F; ->blue */
 /* #143456 */
+.scrolldown::-webkit-scrollbar {
+  width: 10px;
+}
+
+.scrolldown::-webkit-scrollbar-track {
+  background-color: darkgrey;
+}
+.scrolldown::-webkit-scrollbar-thumb {
+  box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+  background-color: #143456;
+}
+
+.section {
+  scrollbar-color: #6969dd #e0e0e0;
+  scrollbar-width: thin;
+}
+
+.scrolldown.box {
+  padding: 1rem;
+  max-height: 220px;
+  overflow-y: auto;
+  scrollbar-gutter: stable;
+}
+
 * {
   box-sizing: border-box;
   margin: 0;
@@ -119,44 +143,104 @@ main {
 }
 
 .mainBody h1 {
-  padding-top: 2rem;
   margin-bottom: 1.5rem;
+}
+
+.miniDashboard {
+  background-color: #143456;
+  border-radius: 0.7rem;
+  color: white;
+  padding: 1rem;
+}
+
+.miniDashboard p {
+  font-size: 0.7rem;
+}
+
+.miniDashboard > h2 {
+  letter-spacing: 0.1rem;
+  font-size: 2rem;
+}
+
+.ExpenseDashboard h2 {
+  letter-spacing: 0.1rem;
+  font-size: 1.3rem;
 }
 
 .ExpenseDashboard {
   width: 30vw;
-  background-color: #143456;
-  border-radius: 0.7rem;
-  color: white;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 1rem;
+  font-size: 0.8rem;
+  margin-top: 1rem;
 }
 
 .ExpenseDashboard > div {
   margin-inline: 0.2rem;
+  display: flex;
+  align-items: center;
+  gap: 2rem;
 }
 
 .ExpenseDashboard > div > p {
-  margin: 1rem 0;
+  margin: 0 0 0.5rem 0;
 }
 
 .ExpenseDashboard > div > div > p {
-  margin: 1rem 0;
+  margin: 0 0 0.5rem 0;
+}
+
+.ExpenseDashboard > div > hr {
+  height: 4rem;
 }
 
 .ExpenseDashboard > div:nth-child(2) {
   display: flex;
-  gap: 0.7rem;
+  justify-content: center;
+  gap: 2rem;
+  align-items: center;
+}
+
+.expensess {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 1rem;
+}
+
+.expensess button {
+  padding: 1rem;
+  background-color: #143456;
+  border: none;
+  outline: none;
+  color: white;
+  border-radius: 0.7rem;
+  cursor: pointer;
 }
 
 .EditDelete {
   display: flex;
+  gap: 1rem;
+  margin: 1rem 0;
+  justify-content: end;
+}
+
+.EditDelete > div {
+  display: flex;
+  gap: 0.3rem;
+  cursor: pointer;
+  color: #143456;
+  padding: 0.5rem;
+  border-radius: 0.7rem;
+}
+
+.EditDelete > div:hover {
+  background-color: #143456;
+  color: white;
 }
 
 table {
-  margin-top: 1rem;
   width: 100%;
   border-collapse: collapse;
 }
