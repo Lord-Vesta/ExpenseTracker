@@ -69,7 +69,7 @@ nav h2 {
 }
 
 .bottom {
-  margin-top: 12rem;
+  margin-top: 24rem;
 }
 
 .settings {
@@ -118,6 +118,10 @@ main {
   margin-right: 4rem;
 }
 
+.addExpense {
+  margin: 0;
+}
+
 .fa-bell {
   color: #143456;
   cursor: pointer;
@@ -139,7 +143,7 @@ main {
 .mainBody {
   background-color: #f0f2f554;
   width: 85vw;
-  height: 89.9vh;
+  /* height: 89.9vh; */
 }
 
 .mainBody h1 {
@@ -151,10 +155,12 @@ main {
   border-radius: 0.7rem;
   color: white;
   padding: 1rem;
+  position: relative;
 }
 
 .miniDashboard p {
-  font-size: 0.7rem;
+  margin: 0 0 0.5rem 0.5rem;
+  font-size: 0.8rem;
 }
 
 .miniDashboard > h2 {
@@ -179,20 +185,13 @@ main {
 .ExpenseDashboard > div {
   margin-inline: 0.2rem;
   display: flex;
+  flex-direction: column;
   align-items: center;
-  gap: 2rem;
 }
 
 .ExpenseDashboard > div > p {
   margin: 0 0 0.5rem 0;
-}
-
-.ExpenseDashboard > div > div > p {
-  margin: 0 0 0.5rem 0;
-}
-
-.ExpenseDashboard > div > hr {
-  height: 4rem;
+  font-size: 0.8rem;
 }
 
 .ExpenseDashboard > div:nth-child(2) {
@@ -202,11 +201,31 @@ main {
   align-items: center;
 }
 
+.ExpenseDashboard hr {
+  height: 3rem;
+}
+
 .expensess {
   display: flex;
   align-items: center;
   justify-content: space-between;
   margin-top: 1rem;
+}
+
+.Search {
+  background-color: white;
+  border: 1px solid #4f4f4f;
+  padding: 0.5rem;
+  width: 30vw;
+  gap: 1rem;
+  display: flex;
+}
+
+.Search input {
+  border: none;
+  outline: none;
+  font-size: 1rem;
+  width: 22rem;
 }
 
 .expensess button {
@@ -219,30 +238,40 @@ main {
   cursor: pointer;
 }
 
+.expensess button:hover {
+  background-color: #163a5f;
+}
+
+.expenseList {
+  margin: 0;
+}
+
 .EditDelete {
   display: flex;
   gap: 1rem;
-  margin: 1rem 0;
-  justify-content: end;
+  /* justify-content: end; */
+  visibility: hidden;
+  justify-content: space-evenly;
 }
 
 .EditDelete > div {
   display: flex;
   gap: 0.3rem;
   cursor: pointer;
-  color: #143456;
-  padding: 0.5rem;
+  color: #142b56;
+  padding: 0 0.5rem;
   border-radius: 0.7rem;
 }
 
-.EditDelete > div:hover {
+/* .EditDelete > div:hover {
   background-color: #143456;
   color: white;
-}
+} */
 
 table {
   width: 100%;
   border-collapse: collapse;
+  position: relative;
 }
 
 td,
@@ -252,4 +281,121 @@ th {
   padding: 1rem;
   border-left: none;
   border-right: none;
+}
+
+.modal {
+  position: absolute;
+  background-color: white;
+  width: 50vw;
+  height: 22rem;
+  left: 25rem;
+  top: 12rem;
+  /* display: none; */
+  box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px,
+    rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px,
+    rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+  display: none;
+}
+
+.modal-top {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem;
+  position: relative;
+  /* gap: 12rem; */
+}
+
+.modal-top .fa-times {
+  right: 2rem;
+  position: absolute;
+  cursor: pointer;
+}
+
+.modal > p {
+  text-align: center;
+  font-size: larger;
+  font-weight: 600;
+  margin-top: 1rem;
+  text-align: center;
+}
+
+.modal p {
+  font-weight: 600;
+}
+
+.modal input {
+  font-size: 1.2rem;
+  width: 16rem;
+  height: 3rem;
+  margin-top: 0.7rem;
+  padding: 0.5rem;
+}
+
+.inputRow {
+  display: flex;
+  gap: 1rem;
+  margin-top: 2rem;
+  margin-inline: 1rem;
+  align-items: center;
+  justify-content: center;
+}
+
+.modal button {
+  margin-left: 17.4rem;
+  margin-top: 2rem;
+  padding: 0.5rem 0;
+  padding-inline: 3rem;
+  background-color: #143456;
+  color: white;
+  border: none;
+  outline: none;
+  cursor: pointer;
+}
+
+.modal button:hover {
+  background-color: #163a5f;
+}
+
+tr:hover .EditDelete {
+  visibility: visible;
+}
+
+.EditModal {
+  display: flex;
+  position: absolute;
+  top: 25rem;
+  left: 15rem;
+  gap: 3rem;
+  background-color: white;
+  height: 3rem;
+  width: 70rem;
+  box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px,
+    rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px,
+    rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+  display: none;
+}
+
+.EditModal input {
+  margin-top: 0.5rem;
+  margin-left: 1rem;
+  height: 2rem;
+  width: 140px;
+  /* border: none; */
+  outline: none;
+  font-size: 1.2rem;
+  align-items: center;
+  padding: 0 0.4rem;
+}
+
+.EditModal .EditDone {
+  margin-top: 0.5rem;
+  margin-left: 2rem;
+  padding: 0.5rem 1rem;
+  cursor: pointer;
+  background-color: #143456;
+  border: none;
+  outline: none;
+  color: white;
+  font-size: medium;
 }

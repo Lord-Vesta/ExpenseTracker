@@ -20,21 +20,10 @@
   <body>
     <nav>
       <h2>Budgetify</h2>
-      <div class="addExpense navIcons">
-        <i class="fa-solid fa-dollar-sign"></i>
-        <p>Add Expense</p>
-      </div>
+
       <div class="NavDashBoard navIcons">
         <i class="fa-solid fa-chart-pie"></i>
         <p>Dashboard</p>
-      </div>
-      <div class="expenseList navIcons">
-        <i class="fa-solid fa-list"></i>
-        <p>Sort</p>
-      </div>
-      <div class="expenseList navIcons">
-        <i class="fa-solid fa-search"></i>
-        <p>Search</p>
       </div>
       <hr class="bottom" />
       <div class="settings">
@@ -47,8 +36,12 @@
       </div>
     </nav>
 
-    <main>
+    <main id="main">
       <section class="topNav">
+        <div class="addExpense navIcons">
+          <i class="fa-solid fa-dollar-sign"></i>
+          <p>Add Expense</p>
+        </div>
         <i class="fa-regular fa-bell"></i>
         <div class="profile">
           <p>Donna</p>
@@ -57,51 +50,43 @@
       </section>
       <section class="mainBody container">
         <div
-          style="
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            padding-top: 2rem;
-          "
+          style="display: flex; align-items: center; justify-content: center"
         >
           <!-- <h1>Expense Tracker</h1> -->
           <div class="miniDashboard">
-            <p>Total Expenses</p>
-            <h2>$3000</h2>
+            <p>Balance</p>
+            <h2 id="balance">$3000</h2>
             <div class="ExpenseDashboard">
               <div>
-                <div>
-                  <p>Total Expense</p>
-                  <h2>$30,000</h2>
-                </div>
-                <hr />
+                <p>Total Expense</p>
+                <h2 id="TotalExpense"></h2>
               </div>
+              <hr />
               <div>
-                <div>
-                  <p>Maximum Expense</p>
-                  <h2>$3000</h2>
-                </div>
-                <hr />
+                <p>Total income</p>
+                <h2 id="TotalIncome">$3000</h2>
               </div>
+              <hr />
+
               <div>
-                <div>
-                  <p>Average Expense</p>
-                  <h2>$3000</h2>
-                </div>
+                <p>Average Expense</p>
+                <h2 id="AverageExpense">$3000</h2>
               </div>
             </div>
           </div>
         </div>
         <div class="expensess">
-          <button>Add Expense</button>
-          <div class="EditDelete">
+          <div class="Search">
+            <i class="fa-solid fa-search"></i>
+            <input type="text" placeholder="Search" />
+          </div>
+          <div style="display: flex; align-items: center; gap: 2rem">
             <div>
-              <i class="fa-solid fa-pen"></i>
-              <p>Edit</p>
+              <button id="AddModal">Add Expense</button>
             </div>
-            <div>
-              <i class="fa-solid fa-trash"></i>
-              <p>Delete</p>
+            <div class="expenseList navIcons">
+              <i class="fa-solid fa-list"></i>
+              <p>Sort</p>
             </div>
           </div>
         </div>
@@ -120,68 +105,67 @@
           <table>
             <thead>
               <tr>
-                <th>Id</th>
-                <th>Description</th>
                 <th>Amount</th>
-                <th>Date</th>
                 <th>Category</th>
+                <th>Description</th>
+                <th>Date</th>
               </tr>
             </thead>
-            <tbody style="height: 16rem">
-              <tr>
-                <td>1</td>
-                <td>Food</td>
-                <td>200</td>
-                <td>20/3/23</td>
-                <td>Hotel</td>
-              </tr>
-              <tr>
-                <td>1</td>
-                <td>Food</td>
-                <td>200</td>
-                <td>20/3/23</td>
-                <td>Hotel</td>
-              </tr>
-              <tr>
-                <td>1</td>
-                <td>Food</td>
-                <td>200</td>
-                <td>20/3/23</td>
-                <td>Hotel</td>
-              </tr>
-              <tr>
-                <td>1</td>
-                <td>Food</td>
-                <td>200</td>
-                <td>20/3/23</td>
-                <td>Hotel</td>
-              </tr>
-              <tr>
-                <td>1</td>
-                <td>Food</td>
-                <td>200</td>
-                <td>20/3/23</td>
-                <td>Hotel</td>
-              </tr>
-              <tr>
-                <td>1</td>
-                <td>Food</td>
-                <td>200</td>
-                <td>20/3/23</td>
-                <td>Hotel</td>
-              </tr>
-              <tr>
-                <td>1</td>
-                <td>Food</td>
-                <td>200</td>
-                <td>20/3/23</td>
-                <td>Hotel</td>
-              </tr>
-            </tbody>
+            <tbody id="tbody"></tbody>
+            <tr></tr>
           </table>
         </div>
       </section>
     </main>
+
+    <section class="modal">
+      <div class="modal-top">
+        <p>Add Expenses</p>
+        <i class="fa-solid fa-times"></i>
+      </div>
+      <div class="form">
+        <div class="inputRow">
+          <div>
+            <p>Amount</p>
+
+            <input type="number" id="amount" />
+          </div>
+          <div>
+            <p>Category</p>
+            <input type="text" id="Category" />
+          </div>
+        </div>
+        <div class="inputRow">
+          <div>
+            <p>Description</p>
+            <input type="text" id="description" />
+          </div>
+          <div>
+            <p>Date</p>
+            <input type="date" id="date" />
+          </div>
+        </div>
+      </div>
+      <button id="AddBtn">Add</button>
+    </section>
+
+    <section class="EditModal">
+      <div>
+        <input type="number" id="EditAmount" />
+      </div>
+      <div>
+        <input type="text" id="EditCategory" />
+      </div>
+      <div>
+        <input type="text" id="EditDescription" />
+      </div>
+      <div>
+        <input type="date" id="EditDate" />
+      </div>
+      <div>
+        <button class="EditDone">Done</button>
+      </div>
+    </section>
 
     <script src="script.js"></script>
   </body>
