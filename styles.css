@@ -287,7 +287,7 @@ th {
   position: absolute;
   background-color: white;
   width: 50vw;
-  height: 22rem;
+  height: 24rem;
   left: 25rem;
   top: 12rem;
   /* display: none; */
@@ -300,11 +300,22 @@ th {
 .modal-top {
   display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: space-evenly;
   padding: 1rem;
   position: relative;
   /* gap: 12rem; */
 }
+
+.Add {
+  padding: 1rem;
+  border-radius: 0.7rem;
+  cursor: pointer;
+}
+
+/* #AddExpenses {
+  background-color: #143456;
+  color: white;
+} */
 
 .modal-top .fa-times {
   right: 2rem;
@@ -332,6 +343,36 @@ th {
   padding: 0.5rem;
 }
 
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: white;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+  z-index: 1;
+}
+
+.dropdown-content a {
+  color: black;
+  padding: 10px 16px;
+  width: 16rem;
+  text-decoration: none;
+  display: block;
+  text-align: center;
+}
+
+.dropdown-content a:hover {
+  background-color: #f7f7f7;
+}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
 .inputRow {
   display: flex;
   gap: 1rem;
@@ -342,7 +383,7 @@ th {
 }
 
 .modal button {
-  margin-left: 17.4rem;
+  margin-left: 16rem;
   margin-top: 2rem;
   padding: 0.5rem 0;
   padding-inline: 3rem;
@@ -351,6 +392,9 @@ th {
   border: none;
   outline: none;
   cursor: pointer;
+  border-radius: 0.7rem;
+  box-sizing: border-box;
+  width: 12rem;
 }
 
 .modal button:hover {

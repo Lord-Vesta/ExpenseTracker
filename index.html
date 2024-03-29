@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Todo-List</title>
+    <title>Expense Tracker</title>
     <link rel="stylesheet" href="styles.css" />
     <script
       src="https://kit.fontawesome.com/0bbc0d0a8d.js"
@@ -39,8 +39,7 @@
     <main id="main">
       <section class="topNav">
         <div class="addExpense navIcons">
-          <i class="fa-solid fa-dollar-sign"></i>
-          <p>Add Expense</p>
+          <p>Add</p>
         </div>
         <i class="fa-regular fa-bell"></i>
         <div class="profile">
@@ -52,25 +51,24 @@
         <div
           style="display: flex; align-items: center; justify-content: center"
         >
-          <!-- <h1>Expense Tracker</h1> -->
           <div class="miniDashboard">
             <p>Balance</p>
-            <h2 id="balance">$3000</h2>
+            <h2 id="balance">$0</h2>
             <div class="ExpenseDashboard">
               <div>
                 <p>Total Expense</p>
-                <h2 id="TotalExpense"></h2>
+                <h2 id="TotalExpense">$0</h2>
               </div>
               <hr />
               <div>
                 <p>Total income</p>
-                <h2 id="TotalIncome">$3000</h2>
+                <h2 id="TotalIncome">$0</h2>
               </div>
               <hr />
 
               <div>
                 <p>Average Expense</p>
-                <h2 id="AverageExpense">$3000</h2>
+                <h2 id="AverageExpense">$0</h2>
               </div>
             </div>
           </div>
@@ -82,7 +80,7 @@
           </div>
           <div style="display: flex; align-items: center; gap: 2rem">
             <div>
-              <button id="AddModal">Add Expense</button>
+              <button id="AddModal">Add</button>
             </div>
             <div class="expenseList navIcons">
               <i class="fa-solid fa-list"></i>
@@ -120,7 +118,8 @@
 
     <section class="modal">
       <div class="modal-top">
-        <p>Add Expenses</p>
+        <p class="Add" id="AddIncome">Add Income</p>
+        <p class="Add" id="AddExpenses">Add Expenses</p>
         <i class="fa-solid fa-times"></i>
       </div>
       <div class="form">
@@ -130,9 +129,19 @@
 
             <input type="number" id="amount" />
           </div>
-          <div>
+          <div class="dropdown" id="categoryDropdown">
             <p>Category</p>
             <input type="text" id="Category" />
+            <div class="dropdown-content">
+              <a href="#" class="category1" onclick="selectCategory('Category')"
+                >Groceries</a
+              >
+              <a href="#" class="category1">Restaurant</a>
+              <a href="#" class="category1">Rent</a>
+              <a href="#" class="category1">Food</a>
+              <a href="#" class="category1">Shopping</a>
+              <a href="#" class="category1">Vacation</a>
+            </div>
           </div>
         </div>
         <div class="inputRow">
