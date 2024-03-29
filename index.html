@@ -76,7 +76,7 @@
         <div class="expensess">
           <div class="Search">
             <i class="fa-solid fa-search"></i>
-            <input type="text" placeholder="Search" />
+            <input type="text" placeholder="Search" /id = "search">
           </div>
           <div style="display: flex; align-items: center; gap: 2rem">
             <div>
@@ -131,23 +131,24 @@
           </div>
           <div class="dropdown" id="categoryDropdown">
             <p>Category</p>
-            <input type="text" id="Category" />
-            <div class="dropdown-content">
-              <a href="#" class="category1" onclick="selectCategory('Category')"
-                >Groceries</a
-              >
-              <a href="#" class="category1">Restaurant</a>
-              <a href="#" class="category1">Rent</a>
-              <a href="#" class="category1">Food</a>
-              <a href="#" class="category1">Shopping</a>
-              <a href="#" class="category1">Vacation</a>
+            <input type="select" id="Category" />
+            <div class="dropdown-content expenseCategory">
+              <a href="#" class="category">Groceries</a>
+              <a href="#" class="category">Rent</a>
+              <a href="#" class="category">Hotel</a>
+              <a href="#" class="category">Investment</a>
+            </div>
+            <div class="dropdown-content IncomeCategory">
+              <a href="#" class="category">Salary</a>
+              <a href="#" class="category">Home Rent</a>
+              <a href="#" class="category">Stock market</a>
             </div>
           </div>
         </div>
         <div class="inputRow">
           <div>
             <p>Description</p>
-            <input type="text" id="description" />
+            <input type="text" id="description" maxlength="30" />
           </div>
           <div>
             <p>Date</p>

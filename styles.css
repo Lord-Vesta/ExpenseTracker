@@ -369,10 +369,6 @@ th {
   background-color: #f7f7f7;
 }
 
-.dropdown:hover .dropdown-content {
-  display: block;
-}
-
 .inputRow {
   display: flex;
   gap: 1rem;
@@ -442,4 +438,16 @@ tr:hover .EditDelete {
   outline: none;
   color: white;
   font-size: medium;
+}
+
+.expenseCategory {
+  display: none;
+}
+
+.IncomeCategory {
+  display: none;
+}
+
+.hide {
+  display: none;
 }

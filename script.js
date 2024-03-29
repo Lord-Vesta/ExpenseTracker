@@ -24,6 +24,29 @@ const AverageExpense = document.getElementById("AverageExpense");
 const addIncome = document.getElementById("AddIncome");
 const addExpenses = document.getElementById("AddExpenses");
 const dropdownCateogry = document.querySelectorAll(".category1");
+const expenseCategory = document.querySelector(".expenseCategory");
+const IncomeCategory = document.querySelector(".IncomeCategory");
+const search = document.getElementById("search");
+
+console.log(search);
+
+search.addEventListener("input", (e) => {
+  let searchvalue = e.target.value.toLowerCase().trim();
+  let isVisible;
+  console.log(data.expenseData);
+  data.expenseData.forEach((task) => {
+    isVisible = task.category.toLowerCase().includes(searchvalue);
+    let yash = document.querySelectorAll("#tbody tr");
+    yash.forEach((e) => {
+      console.log(e);
+    });
+    // task.element.classList.toggle("hide", !isVisible);
+    // console.log(task);
+    // console.log(isVisible);
+    // console.log(task);
+  });
+  // console.log(isVisible);
+});
 
 let data = { expenseData: [], incomeData: [], transaction: [] };
 
@@ -48,6 +71,8 @@ closebtn.addEventListener("click", () => {
   addIncome.style.backgroundColor = "white";
   addIncome.style.color = "#163a5f";
   addExpense.innerText = "Add";
+  expenseCategory.style.display = "none";
+  IncomeCategory.style.display = "none";
 });
 
 // for modal display
@@ -64,7 +89,29 @@ addExpenses.addEventListener("click", () => {
   addExpenses.style.backgroundColor = "#163a5f";
   addExpenses.style.color = "white";
   addExpense.innerText = "Add Expense";
-  let i = 0;
+  IncomeCategory.style.display = "none";
+  category.addEventListener("click", () => {
+    IncomeCategory.style.display = "none";
+    expenseCategory.style.display = "block";
+    // console.log(expenseCategory);
+    let categories = document.querySelectorAll(".category");
+    categories.forEach((e) => {
+      e.addEventListener("click", () => {
+        category.value = e.innerText;
+        expenseCategory.style.display = "none";
+      });
+    });
+    amount.addEventListener("click", () => {
+      expenseCategory.style.display = "none";
+    });
+    description.addEventListener("click", () => {
+      expenseCategory.style.display = "none";
+    });
+    date.addEventListener("click", () => {
+      expenseCategory.style.display = "none";
+    });
+  });
+
   addExpense.addEventListener("click", () => {
     addData();
     addExpenses.style.backgroundColor = "white";
@@ -82,6 +129,27 @@ addIncome.addEventListener("click", () => {
   addIncome.style.backgroundColor = "#163a5f";
   addIncome.style.color = "white";
   addExpense.innerText = "Add Income";
+  expenseCategory.style.display = "none";
+  category.addEventListener("click", () => {
+    expenseCategory.style.display = "none";
+    IncomeCategory.style.display = "block";
+    let categories = document.querySelectorAll(".category");
+    categories.forEach((e) => {
+      e.addEventListener("click", () => {
+        category.value = e.innerText;
+        IncomeCategory.style.display = "none";
+      });
+    });
+    amount.addEventListener("click", () => {
+      IncomeCategory.style.display = "none";
+    });
+    description.addEventListener("click", () => {
+      IncomeCategory.style.display = "none";
+    });
+    date.addEventListener("click", () => {
+      IncomeCategory.style.display = "none";
+    });
+  });
   addExpense.addEventListener("click", () => {
     data.incomeData.push({
       income: amount.value.trim(),
@@ -96,12 +164,14 @@ addIncome.addEventListener("click", () => {
     date.value = "";
     Modal.style.display = "none";
     mainBody.style.opacity = "1";
+
     // console.log(income);
     ExpenseOverview();
     showtransaction();
   });
 });
 
+// to add expense data
 function addData() {
   console.log("inside add btn");
   let descriptionValue = description.value.trim();
@@ -143,6 +213,7 @@ function addData() {
   }
 }
 
+// to list all the expenses
 function listData() {
   let list = "";
   data.expenseData.forEach((item, index) => {
@@ -173,12 +244,14 @@ function listData() {
   showtransaction();
 }
 
+// delete item
 function deleteItem(index) {
   data.expenseData.splice(index, 1);
   localStorage.setItem("Data", JSON.stringify(data));
   listData();
 }
 
+// edit item
 function EditItem(index) {
   EditModal.style.display = "flex";
   mainBody.style.opacity = "0.5";
@@ -203,6 +276,7 @@ function EditItem(index) {
   EditDone.addEventListener("click", hanleEditDone);
 }
 
+// to calculate transaction overviews
 function ExpenseOverview() {
   let sum = 0;
   let avg = 0;
@@ -225,10 +299,9 @@ function ExpenseOverview() {
     balance: balanceamt.toFixed(2),
   });
   localStorage.setItem("data", JSON.stringify(data));
-
-  // console.log(data.transaction);
 }
 
+// display transactions
 function showtransaction() {
   data.transaction.forEach((list) => {
     TotalExpense.innerText = `$${list.totalExpense}`;
